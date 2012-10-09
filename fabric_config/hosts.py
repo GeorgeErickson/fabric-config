@@ -1,6 +1,7 @@
 import sys
 from fabric.tasks import Task
 from fabric.api import env
+
 class GenericHostTask(Task):
     doc = "Sets env.host = %s"
     

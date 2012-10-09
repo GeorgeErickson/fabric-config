@@ -7,7 +7,7 @@ DEFAULTS = {
 }
 
 
-def setup(namespaces=['hosts']):
+def setup(namespaces=['hosts', 'services']):
     """
     Takes all modules named in namespaces and imports them into the fabfile.
     
@@ -22,6 +22,6 @@ def setup(namespaces=['hosts']):
         ns_module = __import__(namespace)
         ns_module.setup(config)
     
-    fab_module = sys.modules['fabfile']
-    setattr(fab_module, namespace, ns_module)
+        fab_module = sys.modules['fabfile']
+        setattr(fab_module, namespace, ns_module)
     
